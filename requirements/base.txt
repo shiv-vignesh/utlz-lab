@@ -1,0 +1,17 @@
+# Phase 0–1 box deps (venv from runway.toml). Installed by setup/setup.sh.
+#
+# Unpinned on purpose for now: after the first good install, record the exact
+# versions (common/run.py should save `pip freeze` / torch.__version__ into
+# meta.json) and pin here if anything drifts between runs.
+
+# torch's Linux wheel from PyPI bundles its own CUDA runtime; the box only
+# needs a new-enough NVIDIA driver. Triton is NOT listed: torch depends on a
+# specific triton version, and listing it separately risks a mismatched pair.
+torch
+
+numpy
+pandas
+pyyaml        # common/peaks.py reads configs/gpus/*.yaml
+websockets    # common/recorder.py (utlz server on :8079)
+
+# matplotlib is deliberately absent: analysis/ runs locally on pulled results.

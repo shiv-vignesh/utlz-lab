@@ -1,0 +1,4 @@
+name = "p0-matmul"
+description = "One 8192 FP16 GEMM under utlz; writes a standard run dir"
+run = "python -m tests.matmul --n 8192 --dtype fp16 --seconds 30"
+venv = true

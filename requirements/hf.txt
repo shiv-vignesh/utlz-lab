@@ -1,0 +1,6 @@
+# Phase 1 (plain HF transformers) on top of the Phase 0 deps; same venv.
+# This is what setup/setup.sh installs by default.
+-r base.txt
+
+transformers
+accelerate    # device placement helpers; harmless if unused

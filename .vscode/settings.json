@@ -1,0 +1,9 @@
+{
+    "cmake.sourceDirectory": "/Users/shiv/Developer/systalyze-ramp-up/utlz-lab/vllm",
+    "python.defaultInterpreterPath": "/Users/shiv/Developer/systalyze-ramp-up/venv/bin/python",
+    // vllm is installed editable via a setuptools import-hook finder, which Pylance can't follow.
+    // Point the analyzer at the source tree directly.
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/vllm"
+    ]
+}

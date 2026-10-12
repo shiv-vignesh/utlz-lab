@@ -1,0 +1,10 @@
+# Phase 2 venv (/workspace/venv-vllm), separate from base.txt on purpose:
+# vllm pins an exact torch; base.txt's unpinned torch would fight it.
+# Pin vllm after the first good install (pip_freeze.txt in every run dir has the version).
+vllm
+pandas
+numpy
+pyyaml
+websockets    # common/recorder.py
+openai        # tests/vllm_serve_client.py (async streaming)
+httpx         # /metrics scrape

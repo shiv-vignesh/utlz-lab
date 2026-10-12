@@ -1,0 +1,4 @@
+name = "HF Native Inference"
+description = ""
+run = "python -m tests.hf_native_llm_decode --model_name meta-llama/Llama-3.1-8B-Instruct --prompts_path configs/workloads/prompts.txt --isl 128 --osl 512"
+venv = true

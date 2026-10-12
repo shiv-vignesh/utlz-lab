@@ -1,0 +1,8 @@
+name = "p2-server"
+description = "utlz-lab vLLM server (AsyncLLM + own OpenAI layer) on 127.0.0.1:8000, lab admin on. Mac: ssh -L 8000, then python -m client"
+run = "mkdir -p /workspace/utlz-out/logs/p2-server && /workspace/venv-vllm/bin/python -m server --model Qwen/Qwen2.5-7B-Instruct --served-model-name qwen --dtype bfloat16 --max-model-len 1024 --max-num-seqs 64 --gpu-memory-utilization 0.90 --no-enable-prefix-caching --enable-lab-admin 2>&1 | tee /workspace/utlz-out/logs/p2-server/server-$(date +%Y%m%d-%H%M%S).log"
+
+# venv-vllm is separate from runway's venv (vllm pins its own torch)
+venv = false
+# model load + profile + CUDA graph capture take minutes; follow with rw logs, stop with rw stop
+background = true

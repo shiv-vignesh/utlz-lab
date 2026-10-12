@@ -1,0 +1,11 @@
+name = "utlz-server"
+description = "Headless utlz on 127.0.0.1:8079. One per GPU everything else connects to it."
+run = "mkdir -p /workspace/utlz-out/logs/utlz-server && utlz -mode server -port 8079 -log /workspace/utlz-out/logs/utlz-server/utlz.log -log-level INFO"
+
+venv = false
+background = true
+push_first = false
+
+[env]
+UTLZ_DISABLE_PROFILING_WARNING = "1"
+UTLZ_DISABLE_METRICS = "1"

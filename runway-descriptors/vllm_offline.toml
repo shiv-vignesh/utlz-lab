@@ -1,0 +1,6 @@
+# runway-descriptors/p2_vllm_offline.toml
+name = "p2-vllm-offline"
+description = "vLLM offline (LLM class), Qwen2.5-7B, ISL 128 / OSL 512, batch 64 — Phase 1 comparison"
+run = "/workspace/venv-vllm/bin/python -m tests.vllm_offline_decode --max_num_seqs 64"
+venv = false
+background = true    # engine startup + graph capture takes a while; follow with rw logs

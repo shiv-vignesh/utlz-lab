@@ -1,0 +1,27 @@
+# Doubles as runway's push-exclude list ([sync].excludes_files).
+# runway passes each line verbatim to `rsync --exclude`, so:
+#   - comments go on their OWN line (an inline "# ..." becomes part of the pattern)
+#   - "!" negation lines are silently dropped by runway, so don't rely on them
+# Excluded paths are also protected from push's --delete on the box.
+
+# Run outputs: produced on the box, brought back by `runway pull`
+/results/
+/logs/
+*.csv
+*.ncu-rep
+*.nsys-rep
+
+# Model weights (Phases 1-3)
+/models/
+
+# Local vLLM source checkout (reading/navigation only; the box pip-installs vllm)
+/vllm/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store

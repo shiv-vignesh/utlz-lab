@@ -1,0 +1,10 @@
+name = "check-counters"
+description = "Smoke test: utlz reads real SOL under an FP16 GEMM (reuses utlz-server if running)"
+script = "scripts/check_counters.sh"
+venv = true
+
+# Optional overrides; the script's defaults apply when these are absent.
+[env]
+IDLE_S = "8"
+LOAD_S = "30"
+UTLZ_CLIENT_ID = "check-counters"

@@ -1,0 +1,10 @@
+name = "HF Static Compile"
+description = "HF static KV cache + torch.compile(reduce-overhead), Qwen2.5-7B, ISL 128 / OSL 512"
+run = "python -m tests.hf_native_llm_decode --model_name meta-llama/Llama-3.1-8B-Instruct --prompts_path configs/workloads/prompts.txt --isl 128 --osl 512 --mode static"
+venv = true
+# compile takes minutes: run detached; follow with `rw logs`, stop with `rw stop`
+background = true
+
+[env]
+# one log line per Dynamo recompile; after warmup there should be none
+TORCH_LOGS = "recompiles"
